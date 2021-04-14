@@ -1,7 +1,7 @@
 ---
 
 name: Packer GitHub Actions
-author: Kerim Satirli <kerim@operatehappy.com>
+author: Matt James 
 description: Run Packer commands
 
 inputs:
@@ -25,7 +25,7 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker.pkg.github.com/patrontech/packer-ansible-github-actions/packer:latest'
 
 branding:
   color: blue
