@@ -25,8 +25,8 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/patrontech/packer-ansible-github-actions:latest'
-
+  image: 'Dockerfile'
+  
 branding:
   color: blue
   icon: package
