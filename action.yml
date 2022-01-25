@@ -1,7 +1,6 @@
 ---
-
 name: Packer GitHub Actions
-author: Matt James 
+author: Matt James
 description: Run Packer commands
 
 inputs:
@@ -14,6 +13,10 @@ inputs:
   working_directory:
     description: working directory for command (defaults to root)
     required: false
+  ansible_version:
+    description: ansible version
+    required: false
+    default: 3.2.0
   target:
     description: file(s) or directory to target
     required: false
@@ -24,9 +27,9 @@ outputs:
     description: interpolated command (incl. arguments) that will be executed
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  
+  using: "docker"
+  image: "docker://ghcr.io/packer-ansible-github-actions-container:${{ inputs.ansible_version }}"
+
 branding:
   color: blue
   icon: package
