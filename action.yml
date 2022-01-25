@@ -13,10 +13,6 @@ inputs:
   working_directory:
     description: working directory for command (defaults to root)
     required: false
-  ansible_version:
-    description: ansible version
-    required: false
-    default: 3.2.0
   target:
     description: file(s) or directory to target
     required: false
@@ -28,7 +24,7 @@ outputs:
 
 runs:
   using: "docker"
-  image: "docker://ghcr.io/packer-ansible-github-actions-container:${{ inputs.ansible_version }}"
+  image: "docker://ghcr.io/packer-ansible-github-actions-container:3.2.0"
 
 branding:
   color: blue
