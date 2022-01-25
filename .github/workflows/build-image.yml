@@ -2,7 +2,7 @@ name: Publish Packer Image
 
 on:
   push:
-    branches: ["release"]
+    branches: ["refactor"]
 
 env:
   REGISTRY: ghcr.io
