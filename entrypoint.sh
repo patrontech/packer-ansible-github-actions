@@ -34,9 +34,9 @@ for TARGET in "${TARGETS[@]}"; do
 done
 
 # if we're using manifest post processor dump the manifest to variable.
-FILE=/tmp/manifest.json
+FILE=./packer-manifest.json
 if [ -f "$FILE" ]; then
-  MANIFEST=$(</tmp/manifest.json)
+  MANIFEST=$(cat $FILE)
   echo "::set-output name=manifest::$MANIFEST"
 else 
   echo "::set-output name=manifest::''"
