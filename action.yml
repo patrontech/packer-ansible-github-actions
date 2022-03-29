@@ -28,7 +28,7 @@ outputs:
 
 runs:
   using: "docker"
-  image: "docker://ghcr.io/packer-ansible-github-actions-container:${{ inputs.ansible_version }}"
+  image: "docker://ghcr.io/patrontech/packer-ansible-github-actions-container:3.2.0"
 
 branding:
   color: blue
