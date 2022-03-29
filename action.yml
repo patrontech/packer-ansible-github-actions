@@ -21,6 +21,8 @@ inputs:
 outputs:
   command:
     description: interpolated command (incl. arguments) that will be executed
+  manifest:
+    description: manifest output for the packer run (expect it to be in /tmp/manifest.json)
 
 runs:
   using: "docker"
