@@ -32,3 +32,12 @@ for TARGET in "${TARGETS[@]}"; do
   # shellcheck disable=SC2086
   ${OPERATION} "${TARGET}"
 done
+
+# if we're using manifest post processor dump the manifest to variable.
+FILE=./packer-manifest.json
+if [ -f "$FILE" ]; then
+  MANIFEST=$(cat $FILE)
+  echo "::set-output name=manifest::$MANIFEST"
+else 
+  echo "::set-output name=manifest::''"
+fi
