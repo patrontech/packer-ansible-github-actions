@@ -23,8 +23,8 @@ RUN apk --update add --virtual \
     openssl-dev \
     build-base \
     curl \
-    && curl -s -L https://networkgenomics.com/try/mitogen-${MITOGEN_VERSION}.tar.gz | tar xzf - -C /opt/ \
-    && mv /opt/mitogen-* /opt/mitogen \
+    #    && curl -s -L https://networkgenomics.com/try/mitogen-${MITOGEN_VERSION}.tar.gz | tar xzf - -C /opt/ \
+    #    && mv /opt/mitogen-* /opt/mitogen \
     && pip3 install --upgrade \
     pip \
     cffi \
