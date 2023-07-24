@@ -37,7 +37,7 @@ done
 FILE=./packer-manifest.json
 if [ -f "$FILE" ]; then
   MANIFEST=$(cat $FILE)
-  echo "{name}={manifest} $MANIFEST" >> $GITHUB_OUTPUT
+  echo "manifest=$MANIFEST" >> $GITHUB_OUTPUT
 else 
-  echo "{name}={manifest} ''" >> $GITHUB_OUTPUT
+  echo "manifest=''" >> $GITHUB_OUTPUT
 fi
