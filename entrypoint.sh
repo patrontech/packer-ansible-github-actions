@@ -36,7 +36,7 @@ done
 # if we're using manifest post processor dump the manifest to variable.
 FILE=./packer-manifest.json
 if [ -f "$FILE" ]; then
-  MANIFEST=$(cat $FILE)
+  MANIFEST=$(cat $FILE | tr '\n' ' ')
   echo "manifest=$MANIFEST" >> $GITHUB_OUTPUT
 else 
   echo "manifest=''" >> $GITHUB_OUTPUT
