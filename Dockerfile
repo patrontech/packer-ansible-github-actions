@@ -1,5 +1,6 @@
 # see https://hub.docker.com/r/hashicorp/packer/tags for all available tags
-FROM hashicorp/packer:light-1.8.7@sha256:1c6805930b95574e282d02ca5d39d5893453ffbd3ff2d433bd7040376671813e
+ARG PACKER_VERSION=1.8.7
+FROM hashicorp/packer:light-${PACKER_VERSION}
 ARG MITOGEN_VERSION=0.2.9
 ARG ANSIBLE_VERSION=3.2.0
 LABEL ansibleVersion=$ANSIBLE_VERSION
