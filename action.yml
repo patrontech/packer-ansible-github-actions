@@ -17,6 +17,10 @@ inputs:
     description: ansible version
     required: false
     default: 3.2.0
+  packer_version:
+    description: packer version
+    required: false
+    default: 1.8.7
   target:
     description: file(s) or directory to target
     required: false
@@ -30,7 +34,7 @@ outputs:
 
 runs:
   using: "docker"
-  image: "docker://ghcr.io/patrontech/packer-ansible-github-actions-container:3.2.0"
+  image: "docker://ghcr.io/patrontech/packer-ansible-github-actions-container:${{ inputs.packer_version }}-${{ inputs.ansible_version }}"
 
 branding:
   color: blue

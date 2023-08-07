@@ -17,6 +17,7 @@ jobs:
     strategy:
       matrix:
         ansible_ver: [3.2.0]
+        packer_ver: [1.8.7]
 
     steps:
       - name: Checkout repository
@@ -36,6 +37,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          build-args: ANSIBLE_VERSION=${{ matrix.ansible_ver }}
+          build-args: ANSIBLE_VERSION=${{ matrix.ansible_ver }} PACKER_VERSION=${{ matrix.packer_ver }}
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.ansible_ver }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.packer_ver }}-${{ matrix.ansible_ver }}
