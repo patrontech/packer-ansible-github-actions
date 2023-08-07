@@ -37,6 +37,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          build-args: ANSIBLE_VERSION=${{ matrix.ansible_ver }} PACKER_VERSION=${{ matrix.packer_ver }}
+          build-args: |
+            ANSIBLE_VERSION=${{ matrix.ansible_ver }}
+            PACKER_VERSION=${{ matrix.packer_ver }}
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.packer_ver }}-${{ matrix.ansible_ver }}
